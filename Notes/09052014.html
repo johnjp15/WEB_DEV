@@ -1,0 +1,57 @@
+<!--
+    HW02:
+    Write a webpage that can name the 50 states in 5 minutes (exactly 5 mins)
+    Make it aesthetically pleasing
+    minimize work
+    //document.getElementById('myInput').focus();
+-->
+<html>
+    <head>
+        <script type="text/javascript">
+            //alert();
+            /*
+            function pageLoaded()   {
+                //jscode
+            }*/
+            
+            function buttonClick(buttonNumber)  {
+                alert("Button " + buttonNumber + " has been clicked!");
+                //window.setTimeout(alert("Timer fired!"), 2000);
+            }
+            /*
+            function notes {
+                var aItems = array();
+                //or var aItems = [];
+                window.setTimeout(alert("Timer fired!"), 2000);
+            }*/
+        </script>
+    </head>
+    <body bgcolor="#99CCFF" onload="alert('onload alert')">
+        <input type="text" id="text0" name="text0" value="asdf text" accesskey="a">
+        <input type="radio" name="radio0" accesskey=b>
+        <input type="checkbox" name="checkbox0" accesskey=d>
+        <!--<input type=button name="button0" value="button0">   //DO NOT USE-->
+        <button type="button" name="button1" accessKey=c onclick="buttonClick(1)"><u>C</u>lick me</button>
+        
+        <!--
+            <input type="file" 
+            <input type="password"
+            <input type="image"   //server will receive where image was clicked
+            <textarea name="textarea0"></textarea>
+        -->
+        <br>
+        <textarea name="textarea0"></textarea>
+        <br>
+        <select size=4 multiple>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select>
+        
+        
+        <input type="hidden" name="hidden0">
+    </body>
+</html>

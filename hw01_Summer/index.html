@@ -1,0 +1,94 @@
+<!--Web App Development HW01 | Created by John Park | 9/4/2014-->
+<html>
+    <head>
+            <title>My Summer</title>
+            <link rel="shortcut icon" type="image/jpg" href="/palmtree.jpg"/>
+            <!--<link rel="stylesheet" type="text/css" href="/css/index.css"/> -->
+            <script src="innerElement.js"></script>
+            <style>
+                body    {
+                    margin-top: 20px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    font-family: "Verdana";
+                    width: 40%;
+                    
+                }
+                
+                .textbox    {
+                    border-radius: 10px;
+                    border-style: dashed;
+                    border-width: thick;
+                    
+                    opacity: 0.75;
+                    
+                    color: #FFFFFF;
+                    
+                    padding-top: 5px;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                    padding-bottom: 15px;
+                }
+                .red  {
+                    border-color: #FF0026;
+                    background-color: #F5435E;
+                }
+                .orange {
+                    border-color: #F06C00;
+                    background-color: #FF8F32;
+                }
+                .blue   {
+                    border-color: #1758E4;
+                    background-color: #3B95DA;
+                }
+            </style>
+    </head>
+    <body bgcolor = "#CCEEFF" onclick="onclickLoader(event);">
+        <h1><span style="color: #555555">My Summer</span></h1>
+        <br>
+        <div class="textbox orange">
+            <p>I didn't get to enjoy myself as much during this summer because  of college applications and whatnot. Nevertheless, here's a list of some eventful summer moments.</p>
+            <p>- John</p>
+        </div>
+        <br>
+        <div class="textbox blue">
+            <h2>Volunteering at TJ Summer Tech Institute</h2>
+            <img style="margin-left: 50px; border-radius: 40px; opacity: 0.9" src="http://www.woodsonband.org/contact/images/WoodsonNightPerspective.jpg" alt="Woodson High School Photo at Night">
+            <ul>
+                <li>I volunteered at the TJ Summer Tech Institute held at Woodson High School (due to TJ renovations).</li>
+                <li>I met young middle schoolers who aspired to increase their passion for science and technology.</li>
+                <li>I enjoyed the volunteering opportunity and would do it again!</li>
+            </ul>
+        </div>
+        <br>
+        <div class="textbox red">
+            <table style="width: 100%; margin-top: 20px">
+                <tr>
+                    <td><h2><span style="color: #FFFFFF; margin-left: 10px">Raspberry Pi Projects</span></h2></td><td><img style="border-radius: 10px; width: 250px; height: auto; max-width: 800px; max-height: 250px; opacity: 1.0" src="rpi_overview.jpg"></img></td>
+                </tr>
+            </table>
+            <p>Using my Raspberry Pi Model B mini computer, I completed several home media projects over the summer.  I still have a few unfinished projects, but in the meantime, I would love to display some of the projects I've done.</p>
+            <ul>
+                <li>AirPlay Audio Receiver</li>
+                <li>External HDD SAMBA Server</li>
+            </ul>
+            <hr>
+            <table style="width: 100%; margin-top: 20px; color: #FFFFFF">
+                <tr>
+                    <td>
+                        <h3>AirPlay Audio Receiver</h3>
+                        <img style="width: 225px; height: 300px" src="airpi.png"/>
+                        <p style="margin-right: 20px">I connected a pair of speakers to the Raspberry Pi via 3.5mm audio jack.  It plays the audio output of a connected iOS or Android device. The screenshot from my Android phone displays a connection to the "AirPi" server.</p>
+                    </td>
+                    <td>
+                        <h3>HDD SAMBA Server</h3>
+                        <img style="width: 250px; height: 250px" src="network_drives.PNG" />
+                        <p>Using a program called SAMBA, I am able to share the contents of the connected hard drive via my home LAN. The screenshot from my laptop running Windows 7 shows the mapped Raspberry Pi HDD.</p>
+                    </td>
+                </tr>
+               
+        </table>
+            
+        </div>
+    </body>
+</html>

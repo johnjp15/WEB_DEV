@@ -1,0 +1,12 @@
+Database notes
+
+ID	Auction ID	Product	Price	Shipping	Seller Rating	Condition
+
+
+BROWSER-->PHP-->DATABASE
+
+pass string into database with command
+ex> "CREATE TABLE ebay (Id PRIMARY KEY INT, AuctionID UNIQUE TEXT, Price INT, Shipping INT, Rating INT, Condition TEXT), Title TEXT);"
+ex> "INSERT INTO ebay (Id, Auction Id, Price, Shipping, Rating, Condition, Title, NULL, 123456789, 27, 5, 4, 'Like new', 'Laser Pointer');"
+
+INSERT INTO ebay(TimeAdded, Id, Condition, Price, Shipping, StartTime, EndTime, Location, PaymentMethod, URL) values('$date', '$itemsID', '$condition', '$price', '$ship', '$startTime', '$endTime', '$location', '$paymentMethod', '$link')";

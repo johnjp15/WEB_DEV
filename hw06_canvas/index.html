@@ -1,0 +1,51 @@
+<!--
+    Function Grapher
+    Created by John Park
+    11/21/2014
+    Dr. Gabor's Web Development Class
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Function Grapher</title>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+<!--    <script src="js/canvas.js"></script>-->
+    <script src="includeAllJS.js"></script>
+
+    <script type="text/javascript">
+
+    </script>
+</head>
+<body onload="startProgram();">
+	<div id="container">
+		<div id="header">			
+			<ul>
+				<logo>Function Grapher</logo>
+				<li>tool00</li>
+				<li>tool01</li>
+                <li><button name="add" id="add_func_button" type="button">Add</button></li>
+                <li>Function: <input type="text"></input></li>
+			</ul>
+            <div class="navbar">
+                <div class="container">
+                    <div class = "logo"><img src = "./icons/cubeicon.png" alt="" width="45" height="45"></div>
+                </div>
+            </div>
+        </div>
+        <div id="sidebar">
+            <div class="titlebar"><text><strong>Functions: </strong></text></div>
+            <div class="userlist">
+                <div class="entrybox"><text>func00</text></div>
+                <div class="entrybox"><text>func01</text></div>
+                <div class="entrybox"><text>func02</text></div>
+                <div class="entrybox"><text>func03</text></div>
+            </div>
+        </div>
+        <div id="canvas_container">
+           <canvas id="canvas_graph" width="1000" height="900">
+                
+            </canvas>
+        </div>
+    </div>
+</body>
+</html>

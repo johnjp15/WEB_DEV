@@ -1,0 +1,109 @@
+<!-- Created by John Park | Dr. Gabor's Web App Development class | 10/26/2014-->
+<html>
+<head>
+  <script type="text/javascript">
+    
+      /*
+      function findInnerE(evt)   {
+      evt = evt || Event;
+      var startelement = evt.target;
+      
+      var element = document.elementFromPoint(evt.clientX, evt.clientY);
+      var info = "Attributes: \n";
+      var att = element.attributes;
+
+      for(i = 0; i < att.length; i++)   {
+        info += att[i].name + " = " + att[i].value + "\n";
+      }
+      if(att.length == 0) {
+        info += "No non-default attributes."
+      }
+
+      alert("Smallest element: " + element.nodeName + "\n\n" + info);
+    }
+    */
+      
+      function findSmallestE(evt)   {
+            evt = evt || Event;
+            var element = evt.target;
+        //add part for IE
+          var info = "Attributes: \n";
+          /*
+          var att = element.attributes;
+
+          for(i = 0; i < att.length; i++)   {
+            info += att[i].name + " = " + att[i].value + "\n";
+          }
+          if(att.length == 0) {
+            info += "No non-default attributes."
+          }
+          */
+          for(var x in element.attributes) {
+              var type = typeof(x);
+              var value = x.value;
+              
+              info += type + value + "\n";
+          }
+
+          alert("Smallest element: " + element.nodeName + "\n\n" + info);
+
+      }
+  </script>
+    <style type="text/css">
+        .boxcontainer   {
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            font-family: "Verdana";
+            width: 60%;
+        }
+        .textbox    {
+            border-radius: 10px;
+            border-style: dashed;
+            border-width: thick;
+
+            opacity: 0.85;
+
+            color: #FFFFFF;
+
+            padding-top: 5px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 15px;
+        }
+        .red  {
+            border-color: #FF0026;
+            background-color: #F5435E;
+        }
+        .orange {
+            border-color: #F06C00;
+            background-color: #FF8F32;
+        }
+        .blue   {
+            border-color: #1758E4;
+            background-color: #3B95DA;
+        }
+        .green  {
+            border-color: #006633;
+            background-color: #00CC66;
+        }
+    </style>
+</head>
+<body onclick="findSmallestE(event);">
+    <div class="boxcontainer">
+      <h3><center>Innermost Element Test Page</center></h3>
+      <div class="textbox">
+        <div class="textbox red">
+            <div class="textbox orange">
+                <div class="textbox blue">
+                    <div class="textbox green">
+                        <div class="textbox red" id="element1"><p>Nested under 6 divs and the body.</p></div>
+                        <div class="textbox orange" id="element2"><i>The second innermost element.</i></div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

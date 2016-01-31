@@ -1,0 +1,84 @@
+<!--
+    Canvas Lab;
+    John Park;
+    Dr. Gabor's Web Application Development class
+    11/12/14
+-->
+<html>
+<head>
+    <title>Function Graph</title>
+<!--    <script src="canvas.js"></script>-->
+    <style type="text/css">
+        body    {
+            margin: 0px;
+        }
+        .wrap   {
+            display: table;
+        }
+        .toolbar    {
+            display: table-row;
+            width: 100%;
+            height: 30px;
+            background-color: #111111;
+            color: #FFFFFF;
+            top: 0px;
+        }
+        .toolbar.item   {
+            display: table-cell;
+            float: left;
+        }
+        
+        .main_wrapper    {
+            display: table-row;
+            line-height: 33 px;
+/*            width: inherit;*/
+/*            height: 100%;*/
+        }
+        .sidebar    {
+            display: table-cell;
+            float: left;
+            width: 250px;
+            height: 100%;
+            background-color: #0000FF;
+        }
+        .sidebar.item    {
+/*            display: block;*/
+            height: 100%;
+/*            background-color: #AA0000;*/
+        }
+        .canvas_wrapper {
+            display: table-cell;
+/*            float: right;*/
+            background-color: #FF0000;
+            width: 100%;        /*CHANGE THIS*/
+/*            width: 100%;*/
+/*            overflow: auto;*/
+        }
+        #canvas_graph  {
+            width: 100%;
+            height: 100%;
+/*            overflow: auto;*/
+            
+        }
+    </style>
+</head>
+<body bgcolor="#00BB00" onload="startProgram();">
+    <div id="wrap">
+        <div class="toolbar">
+            <div class="toolbar.item">Toolbar Item 1</div>
+            <div class="toolbar.item">Toolbar Item 2</div>
+        </div>
+        <div class="main_wrapper">
+            <div class="sidebar">
+                <div class="sidebar.item">Sidebar Item 1</div>
+                <div class="sidebar.item">Sidebar Item 2</div>
+                <div class="sidebar.item">Sidebar Item 3</div>
+            </div>
+            <div class="canvas_wrapper">
+                <canvas id="canvas_graph"></canvas>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

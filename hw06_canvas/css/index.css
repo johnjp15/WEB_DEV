@@ -1,0 +1,368 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+
+    /*height:100%;*/
+
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #333;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+h3 {
+    color: #95a5a6;
+    font-weight: 400;
+}
+
+h4 {
+    color: #95a5a6;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    color: #ffffff;
+    word-wrap: break-word;
+    font-size: 20px;
+}
+
+#container
+{
+    background: #e3e3e3;
+    width: 100%;
+    height: 100%;
+}
+
+#header
+{
+    background: #20244A;
+    height: 60px;
+    width: 100%;
+
+}
+#header ul
+{
+    list-style:none;
+    width: 100%;
+
+    float: left;
+
+    padding: 0px;
+
+    margin-top: 0px;    /*WITHOUT THIS LINE, THE UL ADDS AN UNWANTED WHITE SPACE, ADDING A SCROLLBAR*/
+}
+
+#header logo
+{
+    /*position: relative;*/
+    display: block;
+    float: left;
+    padding: 8px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #36C389;
+}
+
+#header li
+{
+    /*position: relative;*/
+    display: block;
+    float:right;
+/*    padding: 8px 15px;*/
+    text-decoration: none;
+    font-weight: bold;
+    color: #36C389;
+
+}
+
+#sidebar
+{
+    position: absolute;
+    background: #00ff00;
+    width: 250px;
+    /*height: calc(100% - 120px);*/
+    height: calc(100% - 70px);
+
+    box-shadow: 5px 0px 2px rgba(34,34,34,0.6);
+    z-index: 55555;
+}
+
+#sidebar .titlebar
+{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+
+    background:  linear-gradient(180deg, #202440, #16425D);	/*#202440;*/
+}
+
+#sidebar .userlist
+{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 40px);
+
+/*    background: linear-gradient(0deg, #282828, #686868);*/
+    background: #20244A;
+}
+
+#sidebar .userlist .entrybox
+{
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 35px;
+    color: #C3C3C3;
+
+    box-shadow: 0px 2px 2px rgba(34,34,34,0.6);
+
+    background: #16425D; /*linear-gradient(15deg, #383838, #787878);*/
+
+    z-index: 1;	/**********************************************************************************/
+}
+
+#sidebar .userlist .entrybox:hover
+{
+    background: #1E577D;
+    box-shadow: 0px 2px 2px rgba(43,43,43,0.8);
+    z-index: 10;
+}
+
+#sidebar .userlist .entrybox text
+{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    width: 100%;
+    /*height: 35px;*/
+    font-weight: bold;
+    color: #B3B3B3;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+#sidebar text
+{
+    position: relative;
+    top: 10px;
+    left: 25px;
+    width: 100%;
+    height: 35px;
+
+    color: #D3D3D3;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#content
+{
+    position: absolute;
+    background: #17232B;
+    width: calc(100% - 250px);
+    height:  calc(100% - 120px);
+    margin-left: 250px;
+
+    z-index: -9999;
+}
+
+#content text
+{
+    position: relative;
+    top: 10px;
+    left: 10px;
+
+    font-weight: bold;
+
+    color: #A3A3A3;
+    text-shadow: black 0.1em 0.1em 0.2em;
+}
+
+#footer
+{
+    position: absolute;
+    /*background: #ffff00;*/
+    background: linear-gradient(0deg, #1C1C1C, #303030);
+    height: 60px;
+    width: 100%;
+
+    bottom:0;
+
+    box-shadow: 0px -5px 2px rgba(34,34,34,0.6);
+
+    z-index: 66666;
+}
+
+#footer ul
+{
+    list-style:none;
+    /*width: 200px;*/
+
+    height: 60px;
+    float: right;
+
+    padding:0;
+
+    right: 10px;
+}
+
+#footer text
+{
+    position: relative;
+
+    top: 20px;
+    left: 15px;
+
+    font-weight: bold;
+
+    color: #838383;
+}
+
+#footer .btn
+{
+    display: inline-block;
+    position: relative;
+
+    float: right;
+    top: 0;
+    right: 3%;
+    width: 60px;
+    height: 60px;
+    color: #C3C3C3;
+
+    border-radius: 0px;
+
+    box-shadow: -5px 2px 5px rgba(34,34,34,0.6);
+
+    /*background: #16425D; linear-gradient(15deg, #383838, #787878);*/
+    background: linear-gradient(0deg, #262626, #404040);
+
+    z-index: 77777;	/**********************************************************************************/
+}
+
+#footer .btn:hover
+{
+    /*background: #1E577D;*/
+    background: linear-gradient(0deg, #2A2A2A, #565656);
+    box-shadow: -5px 2px 2px rgba(43,43,43,0.8);
+    z-index: 88888;
+}
+
+#footer .btn:active
+{
+    background: linear-gradient(180deg, #2F2F2F, #505050);
+}
+
+
+#footer .btn text
+{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    width: 100%;
+    /*height: 35px;*/
+    font-weight: bold;
+    color: #B3B3B3;
+    text-shadow: black 0.1em 0.1em 0.2em
+}
+
+.navbar {
+    height: 60px;
+    border-radius: 0px;
+    box-shadow: 0px 5px 2px rgba(34,34,34,0.6);
+    z-index: 99999;
+}
+
+
+.logo {
+    position: relative;
+    top: 5px;
+    /*left: 3%;*/
+    float: left;
+    right: 15%;
+}
+
+
+
+
+
+
+
+/*RENDER EXAMPLE OBJ INDEX.HTML CSS CODE*/
+
+#content body {
+    font-family: Monospace;
+    background-color: #000;
+    color: #fff;
+    margin: 0px;
+    overflow: hidden;
+}
+#info {
+    color: #fff;
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+    display:block;
+}
+#info a, .button { color: #f00; font-weight: bold; text-decoration: underline; cursor: pointer }
+
+/*RENDER EXAMPLE CSS END*/
+
+
+
+
+#canvas_container   {
+    border: 1px;
+    border-color: red;
+    float: right;
+    width: calc(100% - 250px);
+    margin-top: 0px;
+    height: calc(100% - 65px);  /*THERE IS A 5PX WHITE SPACE AT THE BOTTOM  */
+/*    height: 200%;*/
+}
+#canvas_graph   {
+    width: 100%;
+    height: inherit;
+/*    height: calc(100% - 60px);*/
+}

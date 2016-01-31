@@ -1,0 +1,164 @@
+<!--
+    Listbox/Dropdown List Lab; 
+    John Park, Period 5, 11/10/2014;
+    Dr. Gabor's Web Application Development class
+-->
+<html>
+    <head>
+        <title>Listbox/Dropdown Lab</title>
+        
+        <script type="text/javascript">
+            
+            var max_list_size = 6;
+            
+            var elements = {
+                "Alkali Metals":["Lithium", "Sodium", "Potassium", "Rubidium", "Cesium", "Francium"], "Alkaline Earth Metals":["Beryllium", "Magnesium", "Calcium", "Strontium", "Barium", "Radium"], "Transition Metals":["Scandium", "Titanium", "Vanadium", "Chromium", "Manganese", "Iron", "Cobalt", "Nickel", "Copper", "Zinc", "Yttrium", "Zirconium", "Niobium", "Molybdenum", "Technetium", "Ruthenium", "Rhodium", "Palladium", "Silver", "Cadmium", "Hafnium", "Tantalum", "Tungsten", "Rhenium", "Osmium", "Iridium", "Platinum", "Gold", "Mercury"], "Post-transition Metals":["Aluminum", "Gallium", "Indium", "Tin", "Thallium", "Lead", "Bismuth"], "Metalloids":["Boron", "Silicon", "Germanium", "Arsenic", "Antimony", "Tellurium", "Polonium"], "Other Nonmetals":["Hydrogen", "Carbon", "Nitrogen", "Oxygen", "Phosphorus", "Sulfur", "Selenium"], "Halogens":["Fluorine", "Chlorine", "Bromine", "Iodine", "Astatine"], "Noble Gases":["Helium", "Neon", "Argon", "Krypton", "Xenon", "Radon"]
+            }
+            
+            function sizeOfObj(obj) {
+                var size = 0;
+                for(key in obj) {
+                    if(obj.hasOwnProperty(key)) {
+                        size++;
+                    }
+                }
+                return size;
+            }
+            
+            function getCheckedRadioID(name)    {
+                var formElement = document.getElementsByName("boxtype");
+                var form_value;
+                var checkedRadioID;
+                for(i = 0; i < formElement.length; i++){
+                    if(formElement[i].checked)  {
+                        form_value = formElement[i].value;
+                        checkedRadioID = formElement[i];
+                    }
+                }
+                
+                return checkedRadioID;
+            }
+            function killList(id)    {
+                var leftlist = document.getElementById(id);
+                for(i = leftlist.options.length - 1; i >= 0; i--)  {
+                    leftlist.remove(i);
+                }
+            }
+            
+            
+            
+            function updateKeys(data) {
+                var leftlist = document.getElementById("keys");
+                for(key in data)    {
+                    if(data.hasOwnProperty(key))    {
+                        var newOption = document.createElement("option");
+                        newOption.value = key;
+                        newOption.text = key;
+                        leftlist.add(newOption);
+                    }
+                }
+            }
+
+            
+            function updateProperties(evt) {
+                evt = evt || Event;
+                var selected_element = evt.target || evt.srcElement;
+                killList("properties");
+                var properties = elements[selected_element.value];
+                var propertiesList = document.getElementById("properties");
+                for(i = 0; i < properties.length; i++)  {
+                    var newOption = document.createElement("option");
+                    newOption.value = properties[i];
+                    newOption.text = properties[i];
+                    propertiesList.add(newOption);
+                }
+            }
+            
+            
+            function changeListType()   {
+                var radioID = getCheckedRadioID("boxtype");
+                
+                var listElement = document.getElementById("keys");
+                
+                if(radioID.value == "listbox")  {
+                    var objsize = sizeOfObj(elements);
+                    listElement.size = (objsize < max_list_size) ? objsize : max_list_size;
+                }   else if(radioID.value == "dropdown")    {
+                    listElement.size = 1;
+                }
+                
+            }
+            function resetAll()    {
+                //killList("keys");
+                changeListType(elements);
+                //updateKeys(elements);
+                
+            }
+            
+            function onload()   {
+                document.getElementById("keys").size = max_list_size;
+                document.getElementById("properties").size = max_list_size;
+                updateKeys(elements);
+                resetAll();
+            }
+            function radioClick(evt)    {
+                var radioValue = evt.target;
+                var listElement = document.getElementById("keys");
+                if(radioValue == "listbox")  {
+                    var objsize = sizeOfObj(elements);
+                    listElement.size = (objsize < max_list_size) ? objsize : max_list_size;
+                }   else if(radioValue == "dropdown")    {
+                    listElement.size = 1;
+                }
+                
+                resetAll();
+            }
+            
+            
+            
+        </script>
+        
+        <style type="text/css">
+            body    {
+           
+            }
+            .body_container {
+                margin-top: 5%;
+                margin-left: 35%;
+                color: #CCCCCC;
+                font-family: "helvetica";
+            }
+            .lists  {
+                
+            }
+            .list_container {
+                
+            }
+            .left   {
+                float: left;
+            }
+            .right  {
+                margin-left: 275px;
+            }
+        </style>
+    </head>
+    <body bgcolor="#1D1F21" onload="onload()">
+        <div class="body_container">
+            <div class="form_container">
+                <h1>Elements of the Periodic Table</h1>
+                <form onchange="resetAll();" action="">
+                    <input type="radio" onclick="radioClick(event);" name="boxtype" value="dropdown">Dropdown<br>
+                    <input type="radio" onclick="radioClick(event);" name="boxtype" value="listbox" checked="checked">Listbox<br>
+                </form>
+            </div>
+            <div class="lists">
+                <div class="list_container left">
+                    <select id="keys" onchange="updateProperties(event)" style="width: 175px;"></select>
+                </div>
+                <div class="list_container right">
+                    <select id="properties" style="width: 175px"></select>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
